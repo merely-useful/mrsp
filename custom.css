@@ -1,0 +1,23 @@
+.project-lead {
+    background-color: lightblue;
+}
+
+.exercise {
+    background-color: lightblue;
+    font-style: italic;
+}
+
+th {
+    background-color: lightblue;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+td {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+tr:nth-child(even) {
+    background-color: azure;
+}

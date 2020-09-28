@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Managing Research Software Projects: Sharing</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+    <link rel="stylesheet" href="custom.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+### Managing Research Software Projects
+# Sharing
+
+---
+
+# What problems are we trying to solve?
+
+- Re-use
+  - "Paywalls are the raised middle fingers of academia"
+- Credit
+  - "A hundred thousand users doesn't get you tenure"
+- Privacy
+  - "What can be mis-used, will be mis-used"
+
+---
+
+# Scope
+
+- Discussion of publication applies mainly to academics
+- Commercial reports are often confidential
+
+---
+
+# Software licensing
+
+- Standard file #4 is `LICENSE(.md)`
+  - Who can do what with the project's software
+- Use a permissive license for software
+  - The GPL's virality has proven to be unnecessary
+- MIT License: anyone can do anything, you are not liable, they have to give you credit
+- Hippocratic License: all of the above plus do no harm
+- *Do not write your own license*
+
+---
+
+# Everything else
+
+- Use Creative Commons (CC) for data and publications
+- CC-0: anyone can use it any way they like
+  - Best for raw data
+- CC-BY: must cite you as source
+  - Make sure `CITATION` is up to date
+- CC-BY-NC: need your permission to use commercially
+  - Makes institutions happy
+- *Do not write your own license*
+
+---
+
+<h1 class="project-lead">As project lead</h1>
+
+- Choose licenses
+- Check with your institution
+- Update `CITATION` after each publication
+
+---
+
+# Data manifests
+
+- One per directory
+- Describe the software used under Sources
+
+```
+What is this?
+Source(s)
+Last modified
+Contact
+Spatial/temporal applicability
+Variables
+- Header
+- Datatype
+- Description
+```
+
+---
+
+<h1 class="project-lead">As project lead</h1>
+
+- Check manifests against actual datasets
+  - A script that checks Markdown headings against filenames is a useful addition to your CI
+- Decide which results need to be in version control and which can be regenerated
+- Add `.gitignore` to `results` directory to ignore certain files
+
+---
+
+# Publishing
+
+- Put open access versions on the web
+  - Preprint servers like arxiv.org
+  - Your own website
+- Give every report a DOI
+  - Zenodo does this for free
+- Give datasets and software releases DOIs as well
+  - GitHub-Zenodo integration makes this easy
+
+---
+
+# Make yourself citable
+
+- People change names, institutions, email addresses, genders, titles…
+- Get an ORCID and include it in all publications
+
+---
+
+<h1 class="project-lead">As project lead</h1>
+
+- Get DOIs for all publications, datasets, and packages
+  Make sure they're included in `CITATION`
+- Ask all new contributors for ORCIDs
+- Submit reports to preprint servers
+  - Better yet, publish in open access journals
+
+---
+
+# Privacy and security
+
+- Privacy: don't collect information
+- Security: safeguard what you do collect
+- Laws are complex, inconsistent, and constantly changing
+- *Ask an expert*
+  - And get the answer in writing
+- *Always ask those affected for permission*
+  - "Nothing for us, without us"
+
+---
+
+<h1 class="exercise">How are you and your work identified?</h1>
+
+1. Search for your reports online: how accurate and complete are the results?
+1. Do it again in an anonymous browser tab: how much is now inaccessible?
+1. Search for yourself online: how accurate and complete are the results?
+
+---
+
+<h1 class="exercise">Check your own citations</h1>
+
+1. Are your datasets and packages citable?
+1. Do your own publications cite them?
+1. Are your contributors citable and cited?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>

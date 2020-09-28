@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Managing Research Software Projects: Quality</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+      @import url(https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic);
+      @import url(https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic);
+
+      body { font-family: 'Droid Serif'; }
+      h1, h2, h3 {
+        font-family: 'Yanone Kaffeesatz';
+        font-weight: normal;
+      }
+      .remark-code, .remark-inline-code { font-family: 'Ubuntu Mono'; }
+    </style>
+    <link rel="stylesheet" href="custom.css">
+  </head>
+  <body>
+    <textarea id="source">
+
+### Managing Research Software Projects
+# Quality
+
+---
+
+# What problems are we trying to solve?
+
+- Correctness
+  - "Does the code do what it's supposed to?"
+  - "It is getting the right answer?"
+- Verifiability
+  - "How do I know I can trust this result?"
+
+---
+
+# It's harder than it looks
+
+- Hard to know if you're getting the right answer when you don't know what the right answer is
+- Harder when you don't know how close is close enough
+- Harder still when the answers depend on deep domain knowledge
+- Focus on the process and hope it produces the right results
+
+---
+
+# Coding style
+
+## Before
+
+```
+def count(ln):
+    s = ['a', 'A', 'the',
+             'The', 'and']
+    n = 0
+    for i in range(len(ln)):
+        line = ln[i]
+        stuff = line.split()
+        for word in stuff:
+            # print(word)
+            j = s.count(word)
+            if (j > 0) == True:
+                n = n + 1
+    return n
+
+import sys
+
+lines = sys.stdin.readlines()
+# print('number of lines', len(lines))
+n = count(lines)
+print('number', n)
+```
+
+---
+
+# Coding style
+
+## After
+
+```
+import sys
+
+STOPS = {'a', 'A', 'the', 'The', 'and'}
+
+def count(reader):
+    n = 0
+    for line in reader:
+        for word in line.split():
+            if word in STOPS:
+                n += 1
+    return n
+
+if __name__ == '__main__':
+    n = count(sys.stdin)
+    print('number', n)
+```
+
+---
+
+# Lint
+
+- The original `lint` checked for common problems in C
+  - "It's legal, but you shouldn't do it that way"
+- Readable code contains fewer bugs
+- Use pycodestyle for Python, lintr for R, etc.
+- Perform these checks in continuous integration
+
+---
+
+<h1 class="project-lead">As project lead</h1>
+
+- Add linting to continuous integration checks
+- Use default settings
+  - Will save many hours of argument
+  - And reduce unfamiliarity for newcomers
+- Show people how to run checks before submitting PRs
+
+---
+
+# Code review
+
+- Bacchelli & Bird 2013: the most cost-effective way to ensure code quality
+  - And to spread knowledge through a team
+- Cohen et al 2013: most of the benefit comes from the first reviewer in the first hour
+- Petre & Wilson 2014: effective code review of scientific software requires domain knowledge
+
+---
+
+<h1 class="project-lead">As project lead</h1>
+
+- Create a short checklist to guide newcomers
+  - No more than a dozen points
+  - Intended for them to outgrow
+- Review first contributions promptly and warmly
+  - Sholler et al 2019: increases the chances that they'll become regular contributors
+
+---
+
+# Assert early, assert often
+
+- `assert(condition, message)`
+  - "There are no NAs in the address column"
+  - "All ages are between 0 and 130"
+- Reduces distance between something going wrong and the problem being noticed
+- Allows readers to check their mental model
+- Forces author to think about what "right" actually means
+
+---
+
+# Logging
+
+- Don't add and remove print statements
+- Use `log(level, message)`
+  - `level` is `DEBUG`, `INFO`, `WARNING`, `ERROR`
+- When running, `setLogging(level, destination)`
+  - Only see messages at that level or above
+  - `destination` can be standard error, a file, etc.
+
+---
+
+# Unit testing
+
+- Packages should have unit tests
+- Use small synthetic datasets
+  - Always record the seed for random number generation
+- Run–inspect–record–perturb
+- Use code coverage to detect untested lines or paths
+  - covr for R, coverage.py for Python
+- Check that asserts actually assert
+  - An alarm that doesn't go off is worse than none at all
+
+---
+
+# This seems like a lot of work
+
+- It actually saves time
+  - Improving quality increases efficiency
+  - In fact, it's the only thing that does
+- And it takes less time than retracting a paper
+  - Or reading a pull request that breaks something
+
+---
+
+<h1 class="exercise">Check style</h1>
+
+1. Run a linting program on your existing software. How many problems does it report? How many do you agree with?
+1. Add linting to your build system so that others can run it with a single command.
+
+---
+
+<h1 class="exercise">How close is close enough?</h1>
+
+1. Pick a recently reported result.
+1. Have team members separately write down how different it would have to be to make them nervous. (They must each provide a specific number.)
+1. Compare answers.
+
+---
+
+<h1 class="exercise">What's your coverage?</h1>
+
+1. What fraction of your existing code is there to check that the rest of it works correctly?
+1. If you have unit tests, use a coverage tool to see what they don't currently check.
+1. How many of your assertions are tested?
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+      var slideshow = remark.create();
+    </script>
+  </body>
+</html>
