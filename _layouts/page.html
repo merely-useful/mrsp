@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>{{site.title}}</title>
+    <title>{{site.title}}{% if page.title %}: {{page.title}}{% endif %}</title>
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{ '/static/custom.css' | relative_url }}">
   </head>

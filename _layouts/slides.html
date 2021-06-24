@@ -1,23 +1,23 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{site.title}}: {{page.title}}</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{{ '/static/custom.css' | relative_url }}">
-  </head>
-  <body>
-    <textarea id="source">
+---
+layout: page
+---
+<textarea id="source">
+
 ### {{site.title}}
 # {{page.title}}
+
+{% if page.quote %}
+<em>{{page.quote.text}}</em>
+
+--- {{page.quote.author}}
+{% endif %}
 
 ---
 
 {{content}}
 
-    </textarea>
-    <script src="{{ '/static/remark.min.js' | relative_url }}"></script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
-</html>
+</textarea>
+<script src="{{ '/static/remark.min.js' | relative_url }}"></script>
+<script>
+  var slideshow = remark.create();
+</script>
