@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Managing Research Software Projects: Workflow</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="custom.css">
-  </head>
-  <body>
-    <textarea id="source">
-
-### Managing Research Software Projects
-# Workflow
-
+---
+title: "Workflow"
 ---
 
 # What problems are we trying to solve?
@@ -22,8 +11,7 @@
 - Complicated merges
   - This is not a happy project
 
-<a href="https://www.reddit.com/r/git/comments/2yt9ox/how_do_you_navigate_branch_spaghetti/"><img src="img/branch-spaghetti.png" alt="Branch Spaghetti" /></a>
-
+{% include fig img="branch-spaghetti.png" alt="Branch Spaghetti" credit="https://www.reddit.com/r/git/comments/2yt9ox/how_do_you_navigate_branch_spaghetti/" %}
 ---
 
 # Use issues as a shared to-do list
@@ -101,7 +89,7 @@
 - Then merge into second and merge back
 - Graph of Git history should never have crossed lines
 
-<img src="feature-branch-workflow.png" alt="Feature-Branch Workflow" />
+{% include fig img="branch-workflow.png" alt="Feature-Branch Workflow" %}
 
 ---
 
@@ -131,12 +119,3 @@ Run this command:
 
 1. How well can you understand your project's history?
 1. Look at someone else's history: how well can you understand it?
-
-    </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
-</html>

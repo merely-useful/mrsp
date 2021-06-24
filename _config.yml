@@ -1,0 +1,11 @@
+title: Managing Research Software Projects
+repository: merely-useful/mrsp
+markdown: kramdown
+highlighter: rouge
+exclude:
+  - README.md
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: "slides"

@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Managing Research Software Projects: Structure</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="custom.css">
-  </head>
-  <body>
-    <textarea id="source">
-
-### Managing Research Software Projects
-# Structure
-
+---
+title: "Structure"
 ---
 
 # What problems are we trying to solve?
@@ -98,7 +87,7 @@
 - Choose filenames for easy wildcard matching
   - Tab completion means you don't have to type them all
 
-<img src="img/noble-high-level.png" alt="Noble's Rules (high level)" />
+{% include fig img="noble-high-level.png" alt="Noble's Rules (high level)" %}
 
 ---
 
@@ -107,7 +96,7 @@
 
 - Rename `ajcs-yyyy` as needed when the publication year is known
 
-<img src="img/noble-per-report.png" alt="Noble's Rules (per report)" />
+{% include fig img="noble-per-report.png" alt="Noble's Rules (per report)" %}
 
 ---
 
@@ -116,7 +105,7 @@
 
 - `bin` is a Unix convention ("binary" meant "compiled program")
 
-<img src="img/noble-bin-directory.png" alt="Noble's Rules (bin directory)" />
+{% include fig img="noble-bin-directory.png" alt="Noble's Rules (bin directory)" %}
 
 ---
 
@@ -125,7 +114,7 @@
 
 - `Makefile` puts compiled programs into `../bin`
 
-<img src="img/noble-src-directory.png" alt="Noble's Rules (bin directory)" />
+{% include fig img="noble-src-directory.png" alt="Noble's Rules (bin directory)" %}
 
 ---
 
@@ -134,7 +123,7 @@
 
 - Don't modify raw data
 
-<img src="img/noble-raw-data.png" alt="Noble's Rules (raw data)" />
+{% include fig img="noble-raw-data.png" alt="Noble's Rules (raw data)" %}
 
 ---
 
@@ -143,7 +132,7 @@
 
 - Only save if regenerating is expensive
 
-<img src="img/noble-generated-data.png" alt="Noble's Rules (generated data)" />
+{% include fig img="noble-generated-data.png" alt="Noble's Rules (generated data)" %}
 
 ---
 
@@ -152,7 +141,7 @@
 
 - Contents may be generated from multiple sources
 
-<img src="img/noble-web-site.png" alt="Noble's Rules (web site)" />
+{% include fig img="noble-web-site.png" alt="Noble's Rules (web site)" %}
 
 ---
 
@@ -200,12 +189,3 @@ Noble's Rules were written before computational notebooks became widespread.
 
 1. Does it make sense to put notebooks in the project's root directory rather than in sub-directories?
 1. Where should saved figures go?
-
-    </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
-</html>

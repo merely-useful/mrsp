@@ -1,0 +1,11 @@
+{%- comment -%}
+  Include an image as a figure.
+  - img: path to image file below './img'.
+  - alt: alt text.
+  - credit (optional): original source.
+{%- endcomment -%}
+<img
+ src="{{'/img/' | append: include.img | relative_url}}"
+ alt="{{include.alt}}"
+ {% if include.credit %}credit="{{include.credit}}"{%- endif -%}
+/>

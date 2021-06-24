@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Managing Research Software Projects: Automation</title>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="custom.css">
-  </head>
-  <body>
-    <textarea id="source">
-
-### Managing Research Software Projects
-# Automation
-
+---
+title: "Automation"
 ---
 
 # What problems are we trying to solve?
@@ -43,7 +32,7 @@
   - Then re-create A
 - Don't re-create D unless E changes
 
-<img src="img/dependencies.png" alt="Dependencies" />
+{% include fig img="dependencies.png" alt="Dependencies" %}
 
 ---
 
@@ -56,8 +45,6 @@
   - Then re-create A
 - Write one rule for C<sub>i</sub> → B<sub>i</sub>
   - Just like you would write a function
-
-<img src="img/dependencies-rules.png" alt="Dependencies with Rules" />
 
 ---
 
@@ -128,12 +115,3 @@
 
 1. What is the biggest difference between GitHub Actions and a service like Travis-CI?
 1. Which would be a better choice for your project? Why?
-
-    </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-      var slideshow = remark.create();
-    </script>
-  </body>
-</html>
