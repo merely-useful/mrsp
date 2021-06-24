@@ -38,3 +38,15 @@ td {
 tr:nth-child(even) {
     background-color: azure;
 }
+
+div.flex-row {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+div.flex-col {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}

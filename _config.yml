@@ -1,4 +1,6 @@
 title: Managing Research Software Projects
+book_url: "https://www.routledge.com/Research-Software-Engineering-with-Python-Building-software-that-makes/Irving-Hertweck-Johnston-Ostblom-Wickham-Wilson/p/book/9780367698324"
+
 repository: merely-useful/mrsp
 markdown: kramdown
 highlighter: rouge

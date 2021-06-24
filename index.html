@@ -2,14 +2,37 @@
 layout: page
 ---
 <h1>{{site.title}}</h1>
-<ul>
-  <li><a href="./00-introduction.html">Introduction</a></li>
-  <li><a href="./01-governance.html">Governance</a></li>
-  <li><a href="./02-workflow.html">Workflow</a></li>
-  <li><a href="./03-automation.html">Automation</a></li>
-  <li><a href="./04-quality.html">Quality</a></li>
-  <li><a href="./05-structure.html">Structure</a></li>
-  <li><a href="./06-sharing.html">Sharing</a></li>
-  <li><a href="./07-leadership.html">Leadership</a></li>
-  <li><a href="./08-conclusion.html">Conclusion</a></li>
-</ul>
+<div class="flex-row">
+  <div class="flex-col" align="center">
+    <p>
+      <a href="{{site.book_url}}">
+        <img src="{{'/img/py-rse-cover.jpg' | relative_url}}" alt="Research Software Engineering with Python (cover)" width="300px" />
+      </a>
+    </p>
+  </div>
+  <div class="flex-col">
+    <p>
+      Software is as essential to research as telescopes, test tubes, and reference libraries.
+      However, most researchers are never shown how to develop and deliver software efficiently as part of a team.
+      This one-day workshop teaches participants how to structure a project,
+      automate repetitive tasks,
+      ensure that what they build is doing what it's supposed to,
+      coordinate contributors,
+      and build the right thing.
+    </p>
+    <p>
+      <strong>Syllabus</strong>
+    </p>
+    <ul>
+      <li><a href="./introduction.html">Introduction</a></li>
+      <li><a href="./governance.html">Governance</a></li>
+      <li><a href="./workflow.html">Workflow</a></li>
+      <li><a href="./automation.html">Automation</a></li>
+      <li><a href="./quality.html">Quality</a></li>
+      <li><a href="./structure.html">Structure</a></li>
+      <li><a href="./sharing.html">Sharing</a></li>
+      <li><a href="./leadership.html">Leadership</a></li>
+      <li><a href="./conclusion.html">Conclusion</a></li>
+    </ul>
+  </div>
+</div>

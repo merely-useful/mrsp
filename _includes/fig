@@ -1,5 +1,5 @@
 {%- comment -%}
-  Include an image as a figure.
+  Include an image.
   - img: path to image file below './img'.
   - alt: alt text.
   - credit (optional): original source.
